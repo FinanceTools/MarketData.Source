@@ -95,41 +95,41 @@ namespace MarketData.Source.FinancialStatementSource
                 {"audited", (f,s)=>f.Audited=Convert.ToBoolean(s) },
                 {"amended", (f,s)=>f.Amended=Convert.ToBoolean(s) },
                 #endregion Metadata
-                {"changeincurrentassets", (f,s)=>f.ChangeInCurrentAsset=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"changeincurrentliabilities", (f,s)=>f.ChangeInCurrentLiabilities=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"changeininventories", (f,s)=>f.ChangeInInventories=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"dividendspaid", (f,s)=>f.DividendsPaid=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"effectofexchangerateoncash", (f,s)=>f.EffectOfExchangeRateOnCash=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"capitalexpenditures", (f,s)=>f.CapitalExpanditure=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"changeincurrentassets", (f,s)=>f.CashFlowStatement.ChangeInCurrentAsset=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"changeincurrentliabilities", (f,s)=>f.CashFlowStatement.ChangeInCurrentLiabilities=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"changeininventories", (f,s)=>f.CashFlowStatement.ChangeInInventories=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"dividendspaid", (f,s)=>f.CashFlowStatement.DividendsPaid=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"effectofexchangerateoncash", (f,s)=>f.CashFlowStatement.EffectOfExchangeRateOnCash=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"capitalexpenditures", (f,s)=>f.CashFlowStatement.CapitalExpanditure=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
 
 
-                {"cashfromfinancingactivities", (f,s)=>f.CashFromFinancingActivities=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"cashfrominvestingactivities", (f,s)=>f.CashFromInvestingActivities=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"cashfromoperatingactivities", (f,s)=>f.CashFromOperatingActivities=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"cfdepreciationamortization", (f,s)=>f.CfDepreciationAmortization=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"changeinaccountsreceivable", (f,s)=>f.ChangeInAccountReceivable=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"investmentchangesnet", (f,s)=>f.InvestmentChangesNet=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"cashfromfinancingactivities", (f,s)=>f.CashFlowStatement.CashFromFinancingActivities=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"cashfrominvestingactivities", (f,s)=>f.CashFlowStatement.CashFromInvestingActivities=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"cashfromoperatingactivities", (f,s)=>f.CashFlowStatement.CashFromOperatingActivities=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"cfdepreciationamortization", (f,s)=>f.CashFlowStatement.CfDepreciationAmortization=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"changeinaccountsreceivable", (f,s)=>f.CashFlowStatement.ChangeInAccountReceivable=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"investmentchangesnet", (f,s)=>f.CashFlowStatement.InvestmentChangesNet=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
 
-                {"netchangeincash", (f,s)=>f.NetChangeInCash=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"totaladjustments", (f,s)=>f.TotalAdjustments=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"ebit", (f,s)=>f.Ebit=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"costofrevenue", (f,s)=>f.CostOfRevenue=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"discontinuedoperations", (f,s)=>f.DiscontinuedOperation=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"equityearnings", (f,s)=>f.EquityEarnings=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"netchangeincash", (f,s)=>f.CashFlowStatement.NetChangeInCash=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"totaladjustments", (f,s)=>f.CashFlowStatement.TotalAdjustments=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"ebit", (f,s)=>f.IncomeStatement.Ebit=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"costofrevenue", (f,s)=>f.IncomeStatement.CostOfRevenue=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"discontinuedoperations", (f,s)=>f.IncomeStatement.DiscontinuedOperation=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"equityearnings", (f,s)=>f.IncomeStatement.EquityEarnings=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
 
-                {"accountingchange", (f,s)=>f.AccountingChange=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"extraordinaryitems", (f,s)=>f.ExtraordinaryItems=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"grossprofit", (f,s)=>f.GrossProfit=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"incomebeforetaxes", (f,s)=>f.IncomeBeforeTaxes=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"interestexpense", (f,s)=>f.InterestExpense=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"netincome", (f,s)=>f.NetIncome=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"accountingchange", (f,s)=>f.CashFlowStatement.AccountingChange=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"extraordinaryitems", (f,s)=>f.IncomeStatement.ExtraordinaryItems=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"grossprofit", (f,s)=>f.IncomeStatement.GrossProfit=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"incomebeforetaxes", (f,s)=>f.IncomeStatement.IncomeBeforeTaxes=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"interestexpense", (f,s)=>f.IncomeStatement.InterestExpense=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"netincome", (f,s)=>f.IncomeStatement.NetIncome=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
 
-                {"netincomeapplicabletocommon", (f,s)=>f.NetIncomeApplicableToCommon=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"researchdevelopmentexpense", (f,s)=>f.ResearchDevelopementExpense=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"totalrevenue", (f,s)=>f.TotalRevenue=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"sellinggeneraladministrativeexpenses", (f,s)=>f.SellingGeneralAdministrativeExpense=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"commonstock", (f,s)=>f.CommonStock=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
-                {"deferredcharges", (f,s)=>f.DeferredCHarges=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"netincomeapplicabletocommon", (f,s)=>f.IncomeStatement.NetIncomeApplicableToCommon=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"researchdevelopmentexpense", (f,s)=>f.IncomeStatement.ResearchDevelopementExpense=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"totalrevenue", (f,s)=>f.IncomeStatement.TotalRevenue=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"sellinggeneraladministrativeexpenses", (f,s)=>f.IncomeStatement.SellingGeneralAdministrativeExpense=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"commonstock", (f,s)=>f.BalanceSheet.CommonStock=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
+                {"deferredcharges", (f,s)=>f.BalanceSheet.DeferredCHarges=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
 
 
                 {"cashandcashequivalents", (f,s)=>f.BalanceSheet.CashAndCashEquivalent=Convert.ToDecimal(s, CultureInfo.InvariantCulture) },
@@ -185,6 +185,8 @@ namespace MarketData.Source.FinancialStatementSource
         public Decimal TotalShortTermDebt { get; set; }
         public Decimal TotalStockHolderEquity { get; set; }
         public Decimal TreasuryStock { get; set; }
+        public Decimal CommonStock { get; set; }
+        public Decimal DeferredCHarges { get; set; }
     }
 
     public class FinancialStatement
@@ -192,6 +194,7 @@ namespace MarketData.Source.FinancialStatementSource
         public BalanceSheet BalanceSheet { get; set; }
         public IncomeStatement IncomeStatement { get; set; }
         public CashFlowStatement CashFlowStatement { get; set; }
+
         #region MetaData
         public string Cik { get; set; }
         public string CompanyName { get; set; }
@@ -218,41 +221,12 @@ namespace MarketData.Source.FinancialStatementSource
         public bool Amended { get; set; }
         #endregion MetaData
        
-        public Decimal ChangeInCurrentAsset { get; set; }
-        public Decimal ChangeInCurrentLiabilities { get; set; }
-        public Decimal ChangeInInventories { get; set; }
-        public Decimal DividendsPaid { get; set; }
-        public Decimal EffectOfExchangeRateOnCash { get; set; }
-        public Decimal CapitalExpanditure { get; set; }
-        public Decimal CashFromFinancingActivities { get; set; }
-        public Decimal CashFromInvestingActivities { get; set; }
-        public Decimal CashFromOperatingActivities { get; set; }
-        public Decimal CfDepreciationAmortization { get; set; }
-        public Decimal ChangeInAccountReceivable { get; set; }
-        public Decimal InvestmentChangesNet { get; set; }
-        public Decimal NetChangeInCash { get; set; }
-        public Decimal TotalAdjustments { get; set; }
-        public Decimal Ebit { get; set; }
-        public Decimal CostOfRevenue { get; set; }
-        public Decimal DiscontinuedOperation { get; set; }
-        public Decimal EquityEarnings { get; set; }
-        public Decimal AccountingChange { get; set; }
-        public Decimal ExtraordinaryItems { get; set; }
-        public Decimal GrossProfit { get; set; }
-        public Decimal IncomeBeforeTaxes { get; set; }
-        public Decimal InterestExpense { get; set; }
-        public Decimal NetIncome { get; set; }
-        public Decimal NetIncomeApplicableToCommon { get; set; }
-        public Decimal ResearchDevelopementExpense { get; set; }
-        public Decimal TotalRevenue { get; set; }
-        public Decimal SellingGeneralAdministrativeExpense { get; set; }
-        public Decimal CommonStock { get; set; }
-        public Decimal DeferredCHarges { get; set; }
-
-      
-
-
-
+       
+       
+        
+        
+        
+        
 
         public FinancialStatement()
         {
@@ -267,12 +241,39 @@ namespace MarketData.Source.FinancialStatementSource
 
     public class IncomeStatement
     {
+        public Decimal EquityEarnings { get; set; }
         public Decimal MinorityInterest { get; set; }
+        public Decimal ResearchDevelopementExpense { get; set; }
+        public Decimal NetIncome { get; set; }
+        public Decimal InterestExpense { get; set; }
+        public Decimal IncomeBeforeTaxes { get; set; }
+        public Decimal ExtraordinaryItems { get; set; }
+        public Decimal Ebit { get; set; }
+        public Decimal CostOfRevenue { get; set; }
+        public Decimal TotalRevenue { get; set; }
+        public Decimal GrossProfit { get; set; }
+        public Decimal DiscontinuedOperation { get; set; }
+        public Decimal SellingGeneralAdministrativeExpense { get; set; }
+        public Decimal NetIncomeApplicableToCommon { get; set; }
     }
 
     public class CashFlowStatement
     {
-
+        public Decimal AccountingChange { get; set; }
+        public Decimal InvestmentChangesNet { get; set; }
+        public Decimal TotalAdjustments { get; set; }
+        public Decimal CfDepreciationAmortization { get; set; }
+        public Decimal ChangeInAccountReceivable { get; set; }
+        public Decimal ChangeInCurrentAsset { get; set; }
+        public Decimal ChangeInCurrentLiabilities { get; set; }
+        public Decimal ChangeInInventories { get; set; }
+        public Decimal DividendsPaid { get; set; }
+        public Decimal EffectOfExchangeRateOnCash { get; set; }
+        public Decimal CapitalExpanditure { get; set; }
+        public Decimal NetChangeInCash { get; set; }
+        public Decimal CashFromFinancingActivities { get; set; }
+        public Decimal CashFromInvestingActivities { get; set; }
+        public Decimal CashFromOperatingActivities { get; set; }
     }
 
 
