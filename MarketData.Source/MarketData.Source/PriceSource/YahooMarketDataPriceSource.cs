@@ -16,7 +16,9 @@ namespace MarketData.Source.PriceSource
 
                 using (WebClient web = new WebClient())
                 {
-                    csvData = web.DownloadString(string.Format("http://finance.yahoo.com/d/quotes.csv?s={0}&f=snbaopl1", ticker));
+                    csvData =
+                        web.DownloadString(string.Format("http://finance.yahoo.com/d/quotes.csv?s={0}&f=snbaopl1",
+                            ticker));
                 }
 
                 var fixings = ParseFixings(csvData);
@@ -24,9 +26,30 @@ namespace MarketData.Source.PriceSource
             }
             catch (Exception ex)
             {
-              return new Fixings();
+                return new Fixings();
             }
-            
+
+
+        }
+
+        public int GetNbOutstandingShares(string ticker)
+        {
+            try
+            {
+                string csvData;
+
+                using (WebClient web = new WebClient())
+                {
+                    csvData =
+                        web.DownloadString(string.Format("http://finance.yahoo.com/d/quotes.csv?s={0}&f=j2",ticker));
+                }
+
+                return Convert.ToInt32(csvData);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
         }
 
         public IEnumerable<HistoricalFixing> GetHistoricalFixings(string ticker, DateTime dateFrom, DateTime dateTo)
@@ -37,11 +60,11 @@ namespace MarketData.Source.PriceSource
 
                 using (WebClient web = new WebClient())
                 {
-                    csvData = web.DownloadString(string.Format("http://ichart.yahoo.com/table.csv?s={0}&a={1}&b={2}&c={3}&d={4}&e={5}&f={6}&g=d&ignore=.csv", ticker, dateFrom.Month-1, dateFrom.Day,dateFrom.Year, dateTo.Month-1, dateTo.Day, dateTo.Year));
+                    csvData = web.DownloadString(string.Format("http://ichart.yahoo.com/table.csv?s={0}&a={1}&b={2}&c={3}&d={4}&e={5}&f={6}&g=d&ignore=.csv", ticker, dateFrom.Month - 1, dateFrom.Day, dateFrom.Year, dateTo.Month - 1, dateTo.Day, dateTo.Year));
                 }
 
-                return  ParseHistoricalFixings(csvData);
-                
+                return ParseHistoricalFixings(csvData);
+
             }
             catch (Exception ex)
             {

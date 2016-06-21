@@ -14,11 +14,14 @@ namespace MarketDataSourceConsole
         {
             var yahooDataSource = new YahooMarketDataPriceSource();
             var fixings = yahooDataSource.GetHistoricalFixings("MSFT", new DateTime(2016,03,22),new DateTime(2016,06,17) );
+            var outstandingShares = yahooDataSource.GetNbOutstandingShares("DAL");
+
+
 
             var apiKey = "279kg2utnbdvzztup2vjygte";
             var edgarRetriever = new EdgarMarketDataFinancialStatementSource(apiKey);
-            var statements = edgarRetriever.GetFinancialStatements("CDI");
-
+            var statements = edgarRetriever.GetAnnualFinancialStatements("CDI");
+            var qtrStatements = edgarRetriever.GetQuarterlyFinancialStatements("MSFT");
         }
     }
 }

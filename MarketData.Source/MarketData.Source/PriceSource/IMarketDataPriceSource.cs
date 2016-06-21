@@ -7,5 +7,6 @@ namespace MarketData.Source.PriceSource
     {
         Fixings GetFixing(string ticker);
         IEnumerable<HistoricalFixing> GetHistoricalFixings(string ticker, DateTime dateFrom, DateTime dateTo);
+        int GetNbOutstandingShares(string ticker);
     }
 }

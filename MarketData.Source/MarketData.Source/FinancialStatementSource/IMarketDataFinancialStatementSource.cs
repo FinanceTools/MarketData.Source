@@ -8,7 +8,8 @@ namespace MarketData.Source.FinancialStatementSource
 {
     public interface IMarketDataFinancialStatementSource
     {
-        IEnumerable<FinancialStatement> GetFinancialStatements(string ticker);
+        IEnumerable<FinancialStatement> GetAnnualFinancialStatements(string ticker);
+        IEnumerable<FinancialStatement> GetQuarterlyFinancialStatements(string ticker);
     }
 
 
@@ -17,12 +18,36 @@ namespace MarketData.Source.FinancialStatementSource
 
         private readonly string _apiKey;
 
+        //private readonly string _coreQuery
+
         public EdgarMarketDataFinancialStatementSource(string apiKey)
         {
             _apiKey = apiKey;
         }
 
-        public IEnumerable<FinancialStatement> GetFinancialStatements(string ticker)
+        public IEnumerable<FinancialStatement> GetQuarterlyFinancialStatements(string ticker)
+        {
+            try
+            {
+                string jsonData;
+
+                using (WebClient web = new WebClient())
+                {
+                    jsonData = web.DownloadString(string.Format("http://edgaronline.api.mashery.com/v2/corefinancials/qtr.json?primarysymbols={0}&appkey={1}", ticker, _apiKey));
+                }
+
+                var results = ParseFinancialStatements(jsonData);
+                return results;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        public IEnumerable<FinancialStatement> GetAnnualFinancialStatements(string ticker)
         {
             try
             {
